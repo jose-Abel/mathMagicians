@@ -2,8 +2,6 @@
 
 # mathMagicians - Jose Abel Ramirez Frontany
 
-![screenshot]()
-
 ## Built With
 
 ## Getting Started
@@ -37,8 +35,6 @@ To start the webpack-dev-server, run the following command:
 ```
 
 ### Live Demo Server
-
-[live-version]()
 
 ### Linters
 
