@@ -1,0 +1,136 @@
+.calculator {
+  margin: 3rem 25rem;
+  text-align: center;
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns:
+    [calculator-first-number-start]
+    1fr [calculator-first-number-end calculator-second-number-start]
+    1fr [calculator-second-number-end calculator-third-number-start]
+    1fr [calculator-third-number-end calculator-operator-start]
+    1fr [calculator-operator-end];
+}
+
+.general {
+  border: 2px solid rgba(128, 128, 128, 0.2);
+  padding: 30px 15px;
+  font-size: 1.2rem;
+}
+
+.orange {
+  background-color: #f5913e;
+}
+
+.grayscale {
+  background-color: #e0e0e0;
+}
+
+.results {
+  position: relative;
+  font-size: 2rem;
+  background-color: #858694;
+  color: white;
+  grid-column: calculator-first-number-start / calculator-operator-end;
+  grid-row: 1 / 2;
+}
+
+.results-span {
+  position: absolute;
+  right: 0;
+  margin-right: 1rem;
+}
+
+.ac {
+  grid-column: calculator-first-number-start / calculator-first-number-end;
+  grid-row: 2 / 3;
+}
+
+.plusminus {
+  grid-column: calculator-second-number-start / calculator-second-number-end;
+  grid-row: 2 / 3;
+}
+
+.percentage {
+  grid-column: calculator-third-number-start / calculator-operator-start;
+  grid-row: 2 / 3;
+}
+
+.firstplus {
+  grid-column: calculator-operator-start / calculator-operator-end;
+  grid-row: 2 / 3;
+}
+
+.seven {
+  grid-column: calculator-first-number-start / calculator-first-number-end;
+  grid-row: 3 / 4;
+}
+
+.eight {
+  grid-column: calculator-second-number-start / calculator-second-number-end;
+  grid-row: 3 / 4;
+}
+
+.nine {
+  grid-column: calculator-third-number-start / calculator-third-number-end;
+  grid-row: 3 / 4;
+}
+
+.multiplication {
+  grid-column: calculator-operator-start / calculator-operator-end;
+  grid-row: 3 / 4;
+}
+
+.four {
+  grid-column: calculator-first-number-start / calculator-first-number-end;
+  grid-row: 4 / 5;
+}
+
+.five {
+  grid-column: calculator-second-number-start / calculator-second-number-end;
+  grid-row: 4 / 5;
+}
+
+.six {
+  grid-column: calculator-third-number-start / calculator-third-number-end;
+  grid-row: 4 / 5;
+}
+
+.minus {
+  grid-column: calculator-operator-start / calculator-operator-end;
+  grid-row: 4 / 5;
+}
+
+.one {
+  grid-column: calculator-first-number-start / calculator-first-number-end;
+  grid-row: 5 / 6;
+}
+
+.two {
+  grid-column: calculator-second-number-start / calculator-second-number-end;
+  grid-row: 5 / 6;
+}
+
+.three {
+  grid-column: calculator-third-number-start / calculator-third-number-end;
+  grid-row: 5 / 6;
+}
+
+.secondplus {
+  grid-column: calculator-operator-start / calculator-operator-end;
+  grid-row: 5 / 6;
+}
+
+.zero {
+  grid-column: calculator-first-number-start / calculator-second-number-end;
+  grid-row: 6 / 7;
+}
+
+.dot {
+  grid-column: calculator-third-number-start / calculator-third-number-end;
+  grid-row: 6 / 7;
+}
+
+.equal {
+  grid-column: calculator-operator-start / calculator-operator-end;
+  grid-row: 6 / 7;
+}
