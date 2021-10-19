@@ -1,5 +1,3 @@
-// eslint-disable-next-line react/prefer-stateless-function
-
 import React, { Component } from 'react';
 import './Calculator.css';
 

@@ -2,7 +2,35 @@
 
 # mathMagicians - Jose Abel Ramirez Frontany
 
+"Math magicians" is a website for all fans of mathematics. It is a Single Page App (SPA) that allows users to:
+
+    Make simple calculations.
+    Read a random math-related quote.
+
+Once the calculator is ready it will be used as a part of a full website that includes 3 sub-pages:
+
+- Home page
+- Calculator page
+- Quotes page
+
+The project is divided in:
+
+- Project 1: Setup.
+- Project 2: Components.
+- Project 3: Events.
+- Project 4: Refactor with hooks (pair programming).
+- Project 5: Full website.
+- Project 6: Tests (pair programming).
+- Exercise: Deploy.
+
 ## Built With
+
+- React
+- React-dom
+- Webpack
+- Babel
+- HTML
+- CSS
 
 ## Getting Started
 
@@ -35,6 +63,8 @@ To start the webpack-dev-server, run the following command:
 ```
 
 ### Live Demo Server
+
+### Tests
 
 ### Linters
 
