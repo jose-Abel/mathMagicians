@@ -1,30 +1,61 @@
 import React, { Component } from 'react';
 import './Calculator.css';
+import calculate from '../logic/calculate';
 
 class Calculator extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      total: null,
+      next: null,
+      operation: null,
+    };
   }
 
-  handleButton = (e) => {
-    console.log(e.target.innerHTML);
+  numbersHandler = (e) => {
+    const { total, next, operation } = this.state;
+
+    if (!total && !operation) {
+      this.setState({ total: e.target.innerHTML });
+    } else if (total && !operation) {
+      this.setState({ total: total + e.target.innerHTML });
+    } else if (total && operation && !next) {
+      this.setState({ next: e.target.innerHTML });
+    } else {
+      this.setState({ next: next + e.target.innerHTML });
+    }
+  }
+
+  operationHandler = (e) => {
+    this.setState({ operation: e.target.innerHTML });
+  }
+
+  handleResults = (e) => {
+    const calculation = calculate(this.state, e.target.innerHTML);
+
+    this.setState(calculation);
   }
 
   render() {
+    const { total, next, operation } = this.state;
+
     return (
       <div className="calculator">
 
         <div className="results general">
-          <span className="results-span">0</span>
+          <span className="results-span">
+            { total || 0}
+            { operation }
+            { next }
+          </span>
         </div>
 
         <div
           className="ac general grayscale button"
           role="button"
           tabIndex="0"
-          onClick={this.handleButton}
-          onKeyDown={this.handleButton}
+          onClick={this.handleResults}
+          onKeyDown={this.handleResults}
         >
           AC
         </div>
@@ -33,8 +64,8 @@ class Calculator extends Component {
           className="plusminus general grayscale button"
           role="button"
           tabIndex="0"
-          onClick={this.handleButton}
-          onKeyDown={this.handleButton}
+          onClick={this.handleResults}
+          onKeyDown={this.handleResults}
         >
           +/-
         </div>
@@ -43,8 +74,8 @@ class Calculator extends Component {
           className="percentage general grayscale button"
           role="button"
           tabIndex="0"
-          onClick={this.handleButton}
-          onKeyDown={this.handleButton}
+          onClick={this.operationHandler}
+          onKeyDown={this.operationHandler}
         >
           %
         </div>
@@ -53,18 +84,18 @@ class Calculator extends Component {
           className="firstplus general orange button"
           role="button"
           tabIndex="0"
-          onClick={this.handleButton}
-          onKeyDown={this.handleButton}
+          onClick={this.operationHandler}
+          onKeyDown={this.operationHandler}
         >
-          +
+          ÷
         </div>
 
         <div
           className="seven general grayscale button"
           role="button"
           tabIndex="0"
-          onClick={this.handleButton}
-          onKeyDown={this.handleButton}
+          onClick={this.numbersHandler}
+          onKeyDown={this.numbersHandler}
         >
           7
         </div>
@@ -73,8 +104,8 @@ class Calculator extends Component {
           className="eight general grayscale button"
           role="button"
           tabIndex="0"
-          onClick={this.handleButton}
-          onKeyDown={this.handleButton}
+          onClick={this.numbersHandler}
+          onKeyDown={this.numbersHandler}
         >
           8
         </div>
@@ -83,8 +114,8 @@ class Calculator extends Component {
           className="nine general grayscale button"
           role="button"
           tabIndex="0"
-          onClick={this.handleButton}
-          onKeyDown={this.handleButton}
+          onClick={this.numbersHandler}
+          onKeyDown={this.numbersHandler}
         >
           9
         </div>
@@ -93,8 +124,8 @@ class Calculator extends Component {
           className="multiplication general orange button"
           role="button"
           tabIndex="0"
-          onClick={this.handleButton}
-          onKeyDown={this.handleButton}
+          onClick={this.operationHandler}
+          onKeyDown={this.operationHandler}
         >
           x
         </div>
@@ -103,8 +134,8 @@ class Calculator extends Component {
           className="four general grayscale button"
           role="button"
           tabIndex="0"
-          onClick={this.handleButton}
-          onKeyDown={this.handleButton}
+          onClick={this.numbersHandler}
+          onKeyDown={this.numbersHandler}
         >
           4
         </div>
@@ -113,8 +144,8 @@ class Calculator extends Component {
           className="five general grayscale button"
           role="button"
           tabIndex="0"
-          onClick={this.handleButton}
-          onKeyDown={this.handleButton}
+          onClick={this.numbersHandler}
+          onKeyDown={this.numbersHandler}
         >
           5
         </div>
@@ -123,8 +154,8 @@ class Calculator extends Component {
           className="six general grayscale button"
           role="button"
           tabIndex="0"
-          onClick={this.handleButton}
-          onKeyDown={this.handleButton}
+          onClick={this.numbersHandler}
+          onKeyDown={this.numbersHandler}
         >
           6
         </div>
@@ -133,8 +164,8 @@ class Calculator extends Component {
           className="minus general orange button"
           role="button"
           tabIndex="0"
-          onClick={this.handleButton}
-          onKeyDown={this.handleButton}
+          onClick={this.operationHandler}
+          onKeyDown={this.operationHandler}
         >
           -
         </div>
@@ -143,8 +174,8 @@ class Calculator extends Component {
           className="one general grayscale button"
           role="button"
           tabIndex="0"
-          onClick={this.handleButton}
-          onKeyDown={this.handleButton}
+          onClick={this.numbersHandler}
+          onKeyDown={this.numbersHandler}
         >
           1
         </div>
@@ -153,8 +184,8 @@ class Calculator extends Component {
           className="two general grayscale button"
           role="button"
           tabIndex="0"
-          onClick={this.handleButton}
-          onKeyDown={this.handleButton}
+          onClick={this.numbersHandler}
+          onKeyDown={this.numbersHandler}
         >
           2
         </div>
@@ -163,8 +194,8 @@ class Calculator extends Component {
           className="three general grayscale button"
           role="button"
           tabIndex="0"
-          onClick={this.handleButton}
-          onKeyDown={this.handleButton}
+          onClick={this.numbersHandler}
+          onKeyDown={this.numbersHandler}
         >
           3
         </div>
@@ -173,8 +204,8 @@ class Calculator extends Component {
           className="secondplus general orange button"
           role="button"
           tabIndex="0"
-          onClick={this.handleButton}
-          onKeyDown={this.handleButton}
+          onClick={this.operationHandler}
+          onKeyDown={this.operationHandler}
         >
           +
         </div>
@@ -183,8 +214,8 @@ class Calculator extends Component {
           className="zero general grayscale button"
           role="button"
           tabIndex="0"
-          onClick={this.handleButton}
-          onKeyDown={this.handleButton}
+          onClick={this.numbersHandler}
+          onKeyDown={this.numbersHandler}
         >
           0
         </div>
@@ -193,8 +224,8 @@ class Calculator extends Component {
           className="dot general grayscale button"
           role="button"
           tabIndex="0"
-          onClick={this.handleButton}
-          onKeyDown={this.handleButton}
+          onClick={this.handleResults}
+          onKeyDown={this.handleResults}
         >
           .
         </div>
@@ -203,8 +234,8 @@ class Calculator extends Component {
           className="equal general orange button"
           role="button"
           tabIndex="0"
-          onClick={this.handleButton}
-          onKeyDown={this.handleButton}
+          onClick={this.handleResults}
+          onKeyDown={this.handleResults}
         >
           =
         </div>
