@@ -1,95 +1,168 @@
 import React, { Component } from 'react';
-import './Calculator.css';
+import calculate from '../logic/calculate';
+import Button from './Button';
 
 class Calculator extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      total: null,
+      next: null,
+      operation: null,
+    };
+  }
+
+  numbersHandler = (e) => {
+    const { total, next, operation } = this.state;
+
+    if (!total && !operation) {
+      this.setState({ total: e.target.innerHTML });
+    } else if (total && !operation) {
+      this.setState({ total: total + e.target.innerHTML });
+    } else if (total && operation && !next) {
+      this.setState({ next: e.target.innerHTML });
+    } else {
+      this.setState({ next: next + e.target.innerHTML });
+    }
+  }
+
+  operationHandler = (e) => {
+    this.setState({ operation: e.target.innerHTML });
+  }
+
+  handleResults = (e) => {
+    const calculation = calculate(this.state, e.target.innerHTML);
+
+    this.setState(calculation);
   }
 
   render() {
+    const { total, next, operation } = this.state;
+
     return (
       <div className="calculator">
 
         <div className="results general">
-          <span className="results-span">0</span>
+          <span className="results-span">
+            { total || 0}
+            { operation }
+            { next }
+          </span>
         </div>
 
-        <div className="ac general grayscale">
-          AC
-        </div>
+        <Button
+          content="AC"
+          classname="ac general grayscale button"
+          onClick={this.handleResults}
+        />
 
-        <div className="plusminus general grayscale">
-          +/-
-        </div>
+        <Button
+          content="+/-"
+          classname="plusminus general grayscale button"
+          onClick={this.handleResults}
+        />
 
-        <div className="percentage general grayscale">
-          %
-        </div>
+        <Button
+          content="%"
+          classname="modulus general grayscale button"
+          onClick={this.operationHandler}
+        />
 
-        <div className="firstplus general orange">
-          +
-        </div>
+        <Button
+          content="÷"
+          classname="division general orange button"
+          onClick={this.operationHandler}
+        />
 
-        <div className="seven general grayscale">
-          7
-        </div>
+        <Button
+          content="7"
+          classname="seven general grayscale button"
+          onClick={this.numbersHandler}
+        />
 
-        <div className="eight general grayscale">
-          8
-        </div>
+        <Button
+          content="8"
+          classname="eight general grayscale button"
+          onClick={this.numbersHandler}
+        />
 
-        <div className="nine general grayscale">
-          9
-        </div>
+        <Button
+          content="9"
+          classname="nine general grayscale button"
+          onClick={this.numbersHandler}
+        />
 
-        <div className="multiplication general orange">
-          x
-        </div>
+        <Button
+          content="x"
+          classname="multiplication general orange button"
+          onClick={this.operationHandler}
+        />
 
-        <div className="four general grayscale">
-          4
-        </div>
+        <Button
+          content="4"
+          classname="four general grayscale button"
+          onClick={this.numbersHandler}
+        />
 
-        <div className="five general grayscale">
-          5
-        </div>
+        <Button
+          content="5"
+          classname="five general grayscale button"
+          onClick={this.numbersHandler}
+        />
 
-        <div className="six general grayscale">
-          6
-        </div>
+        <Button
+          content="6"
+          classname="six general grayscale button"
+          onClick={this.numbersHandler}
+        />
 
-        <div className="minus general orange">
-          -
-        </div>
+        <Button
+          content="-"
+          classname="minus general orange button"
+          onClick={this.operationHandler}
+        />
 
-        <div className="one general grayscale">
-          1
-        </div>
+        <Button
+          content="1"
+          classname="one general grayscale button"
+          onClick={this.numbersHandler}
+        />
 
-        <div className="two general grayscale">
-          2
-        </div>
+        <Button
+          content="2"
+          classname="two general grayscale button"
+          onClick={this.numbersHandler}
+        />
 
-        <div className="three general grayscale">
-          3
-        </div>
+        <Button
+          content="3"
+          classname="three general grayscale button"
+          onClick={this.numbersHandler}
+        />
 
-        <div className="secondplus general orange">
-          +
-        </div>
+        <Button
+          content="+"
+          classname="plus general orange button"
+          onClick={this.operationHandler}
+        />
 
-        <div className="zero general grayscale">
-          0
-        </div>
+        <Button
+          content="0"
+          classname="zero general grayscale button"
+          onClick={this.numbersHandler}
+        />
 
-        <div className="dot general grayscale">
-          .
-        </div>
+        <Button
+          content="."
+          classname="dot general grayscale button"
+          onClick={this.handleResults}
+        />
 
-        <div className="equal general orange">
-          =
-        </div>
+        <Button
+          content="="
+          classname="equal general orange button"
+          onClick={this.handleResults}
+        />
 
       </div>
     );

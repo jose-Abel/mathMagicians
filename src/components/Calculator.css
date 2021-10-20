@@ -17,6 +17,10 @@
   font-size: 1.2rem;
 }
 
+.button {
+  cursor: pointer;
+}
+
 .orange {
   background-color: #f5913e;
 }
@@ -50,12 +54,12 @@
   grid-row: 2 / 3;
 }
 
-.percentage {
+.modulus {
   grid-column: calculator-third-number-start / calculator-operator-start;
   grid-row: 2 / 3;
 }
 
-.firstplus {
+.division {
   grid-column: calculator-operator-start / calculator-operator-end;
   grid-row: 2 / 3;
 }
@@ -115,7 +119,7 @@
   grid-row: 5 / 6;
 }
 
-.secondplus {
+.plus {
   grid-column: calculator-operator-start / calculator-operator-end;
   grid-row: 5 / 6;
 }
