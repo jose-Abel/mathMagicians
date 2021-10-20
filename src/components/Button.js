@@ -1,19 +1,21 @@
-/* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import './Calculator.css';
 import PropTypes from 'prop-types';
 
-const Button = (props) => (
-  <div
-    role="button"
-    tabIndex="0"
-    className={props.classname}
-    onClick={props.onClick}
-    onKeyDown={props.onClick}
-  >
-    { props.content }
-  </div>
-);
+const Button = (props) => {
+  const { content, classname, onClick } = props;
+  return (
+    <div
+      role="button"
+      tabIndex="0"
+      className={classname}
+      onClick={onClick}
+      onKeyDown={onClick}
+    >
+      { content }
+    </div>
+  );
+};
 
 Button.propTypes = {
   content: PropTypes.string.isRequired,
