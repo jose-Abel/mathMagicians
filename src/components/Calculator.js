@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './Calculator.css';
 import calculate from '../logic/calculate';
+import Button from './Button';
 
 class Calculator extends Component {
   constructor(props) {
@@ -50,195 +50,119 @@ class Calculator extends Component {
           </span>
         </div>
 
-        <div
-          className="ac general grayscale button"
-          role="button"
-          tabIndex="0"
+        <Button
+          content="AC"
+          classname="ac general grayscale button"
           onClick={this.handleResults}
-          onKeyDown={this.handleResults}
-        >
-          AC
-        </div>
+        />
 
-        <div
-          className="plusminus general grayscale button"
-          role="button"
-          tabIndex="0"
+        <Button
+          content="+/-"
+          classname="plusminus general grayscale button"
           onClick={this.handleResults}
-          onKeyDown={this.handleResults}
-        >
-          +/-
-        </div>
+        />
 
-        <div
-          className="percentage general grayscale button"
-          role="button"
-          tabIndex="0"
+        <Button
+          content="%"
+          classname="modulus general grayscale button"
           onClick={this.operationHandler}
-          onKeyDown={this.operationHandler}
-        >
-          %
-        </div>
+        />
 
-        <div
-          className="firstplus general orange button"
-          role="button"
-          tabIndex="0"
+        <Button
+          content="÷"
+          classname="division general orange button"
           onClick={this.operationHandler}
-          onKeyDown={this.operationHandler}
-        >
-          ÷
-        </div>
+        />
 
-        <div
-          className="seven general grayscale button"
-          role="button"
-          tabIndex="0"
+        <Button
+          content="7"
+          classname="seven general grayscale button"
           onClick={this.numbersHandler}
-          onKeyDown={this.numbersHandler}
-        >
-          7
-        </div>
+        />
 
-        <div
-          className="eight general grayscale button"
-          role="button"
-          tabIndex="0"
+        <Button
+          content="8"
+          classname="eight general grayscale button"
           onClick={this.numbersHandler}
-          onKeyDown={this.numbersHandler}
-        >
-          8
-        </div>
+        />
 
-        <div
-          className="nine general grayscale button"
-          role="button"
-          tabIndex="0"
+        <Button
+          content="9"
+          classname="nine general grayscale button"
           onClick={this.numbersHandler}
-          onKeyDown={this.numbersHandler}
-        >
-          9
-        </div>
+        />
 
-        <div
-          className="multiplication general orange button"
-          role="button"
-          tabIndex="0"
+        <Button
+          content="x"
+          classname="multiplication general orange button"
           onClick={this.operationHandler}
-          onKeyDown={this.operationHandler}
-        >
-          x
-        </div>
+        />
 
-        <div
-          className="four general grayscale button"
-          role="button"
-          tabIndex="0"
+        <Button
+          content="4"
+          classname="four general grayscale button"
           onClick={this.numbersHandler}
-          onKeyDown={this.numbersHandler}
-        >
-          4
-        </div>
+        />
 
-        <div
-          className="five general grayscale button"
-          role="button"
-          tabIndex="0"
+        <Button
+          content="5"
+          classname="five general grayscale button"
           onClick={this.numbersHandler}
-          onKeyDown={this.numbersHandler}
-        >
-          5
-        </div>
+        />
 
-        <div
-          className="six general grayscale button"
-          role="button"
-          tabIndex="0"
+        <Button
+          content="6"
+          classname="six general grayscale button"
           onClick={this.numbersHandler}
-          onKeyDown={this.numbersHandler}
-        >
-          6
-        </div>
+        />
 
-        <div
-          className="minus general orange button"
-          role="button"
-          tabIndex="0"
+        <Button
+          content="-"
+          classname="minus general orange button"
           onClick={this.operationHandler}
-          onKeyDown={this.operationHandler}
-        >
-          -
-        </div>
+        />
 
-        <div
-          className="one general grayscale button"
-          role="button"
-          tabIndex="0"
+        <Button
+          content="1"
+          classname="one general grayscale button"
           onClick={this.numbersHandler}
-          onKeyDown={this.numbersHandler}
-        >
-          1
-        </div>
+        />
 
-        <div
-          className="two general grayscale button"
-          role="button"
-          tabIndex="0"
+        <Button
+          content="2"
+          classname="two general grayscale button"
           onClick={this.numbersHandler}
-          onKeyDown={this.numbersHandler}
-        >
-          2
-        </div>
+        />
 
-        <div
-          className="three general grayscale button"
-          role="button"
-          tabIndex="0"
+        <Button
+          content="3"
+          classname="three general grayscale button"
           onClick={this.numbersHandler}
-          onKeyDown={this.numbersHandler}
-        >
-          3
-        </div>
+        />
 
-        <div
-          className="secondplus general orange button"
-          role="button"
-          tabIndex="0"
+        <Button
+          content="+"
+          classname="plus general orange button"
           onClick={this.operationHandler}
-          onKeyDown={this.operationHandler}
-        >
-          +
-        </div>
+        />
 
-        <div
-          className="zero general grayscale button"
-          role="button"
-          tabIndex="0"
+        <Button
+          content="0"
+          classname="zero general grayscale button"
           onClick={this.numbersHandler}
-          onKeyDown={this.numbersHandler}
-        >
-          0
-        </div>
+        />
 
-        <div
-          className="dot general grayscale button"
-          role="button"
-          tabIndex="0"
+        <Button
+          content="."
+          classname="dot general grayscale button"
           onClick={this.handleResults}
-          onKeyDown={this.handleResults}
-        >
-          .
-        </div>
+        />
 
-        <div
-          className="equal general orange button"
-          role="button"
-          tabIndex="0"
+        <Button
+          content="="
+          classname="equal general orange button"
           onClick={this.handleResults}
-          onKeyDown={this.handleResults}
-        >
-          =
-        </div>
+        />
 
       </div>
     );
