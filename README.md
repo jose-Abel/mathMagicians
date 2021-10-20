@@ -56,7 +56,7 @@ Run the following command to have all npm packages dependencies installed:
 
 ### Usage
 
-To start the webpack-dev-server, run the following command:
+To run the "react-scripts start" script, type the following command:
 
 ```
     npm start
