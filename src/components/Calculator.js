@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { useState } from 'react';
 import calculate from '../logic/calculate';
 import Button from './Button';
@@ -56,6 +57,28 @@ const Calculator = () => {
 
   const { total, next, operation } = state;
 
+  const buttonsObjProperties = [
+    { content: 'AC', classname: 'ac general grayscale button', event: handleResults },
+    { content: '+/-', classname: 'plusminus general grayscale button', event: handleResults },
+    { content: '%', classname: 'modulus general grayscale button', event: operationHandler },
+    { content: '÷', classname: 'division general orange button', event: operationHandler },
+    { content: '7', classname: 'seven general grayscale button', event: numbersHandler },
+    { content: '8', classname: 'eight general grayscale button', event: numbersHandler },
+    { content: '9', classname: 'nine general grayscale button', event: numbersHandler },
+    { content: 'x', classname: 'multiplication general orange button', event: operationHandler },
+    { content: '4', classname: 'four general grayscale button', event: numbersHandler },
+    { content: '5', classname: 'five general grayscale button', event: numbersHandler },
+    { content: '6', classname: 'six general grayscale button', event: numbersHandler },
+    { content: '-', classname: 'minus general orange button', event: operationHandler },
+    { content: '1', classname: 'one general grayscale button', event: numbersHandler },
+    { content: '2', classname: 'two general grayscale button', event: numbersHandler },
+    { content: '3', classname: 'three general grayscale button', event: numbersHandler },
+    { content: '+', classname: 'plus general orange button', event: operationHandler },
+    { content: '0', classname: 'zero general grayscale button', event: numbersHandler },
+    { content: '.', classname: 'dot general grayscale button', event: handleResults },
+    { content: '=', classname: 'equal general orange button', event: handleResults },
+  ];
+
   return (
     <div className="calculator">
 
@@ -67,119 +90,9 @@ const Calculator = () => {
         </span>
       </div>
 
-      <Button
-        content="AC"
-        classname="ac general grayscale button"
-        onClick={handleResults}
-      />
-
-      <Button
-        content="+/-"
-        classname="plusminus general grayscale button"
-        onClick={handleResults}
-      />
-
-      <Button
-        content="%"
-        classname="modulus general grayscale button"
-        onClick={operationHandler}
-      />
-
-      <Button
-        content="÷"
-        classname="division general orange button"
-        onClick={operationHandler}
-      />
-
-      <Button
-        content="7"
-        classname="seven general grayscale button"
-        onClick={numbersHandler}
-      />
-
-      <Button
-        content="8"
-        classname="eight general grayscale button"
-        onClick={numbersHandler}
-      />
-
-      <Button
-        content="9"
-        classname="nine general grayscale button"
-        onClick={numbersHandler}
-      />
-
-      <Button
-        content="x"
-        classname="multiplication general orange button"
-        onClick={operationHandler}
-      />
-
-      <Button
-        content="4"
-        classname="four general grayscale button"
-        onClick={numbersHandler}
-      />
-
-      <Button
-        content="5"
-        classname="five general grayscale button"
-        onClick={numbersHandler}
-      />
-
-      <Button
-        content="6"
-        classname="six general grayscale button"
-        onClick={numbersHandler}
-      />
-
-      <Button
-        content="-"
-        classname="minus general orange button"
-        onClick={operationHandler}
-      />
-
-      <Button
-        content="1"
-        classname="one general grayscale button"
-        onClick={numbersHandler}
-      />
-
-      <Button
-        content="2"
-        classname="two general grayscale button"
-        onClick={numbersHandler}
-      />
-
-      <Button
-        content="3"
-        classname="three general grayscale button"
-        onClick={numbersHandler}
-      />
-
-      <Button
-        content="+"
-        classname="plus general orange button"
-        onClick={operationHandler}
-      />
-
-      <Button
-        content="0"
-        classname="zero general grayscale button"
-        onClick={numbersHandler}
-      />
-
-      <Button
-        content="."
-        classname="dot general grayscale button"
-        onClick={handleResults}
-      />
-
-      <Button
-        content="="
-        classname="equal general orange button"
-        onClick={handleResults}
-      />
+      {buttonsObjProperties.map((objProperties) => (
+        <Button key={objProperties.content} content={objProperties.content} classname={objProperties.classname} onClick={objProperties.event} />
+      ))}
 
     </div>
   );
