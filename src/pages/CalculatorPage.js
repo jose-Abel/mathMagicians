@@ -1,9 +1,13 @@
-// import React from 'react';
+import React from 'react';
 // import PropTypes from 'prop-types';
+import Calculator from '../components/Calculator';
 
-const CalculatorPage = () => {};
+const CalculatorPage = () => (
+  <Calculator />
+);
 
-CalculatorPage.propTypes = {
-};
+// CalculatorPage.propTypes = {
+
+// };
 
 export default CalculatorPage;
