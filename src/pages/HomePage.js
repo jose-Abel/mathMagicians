@@ -1,6 +1,5 @@
 /* eslint-disable max-len */
 import React from 'react';
-// import PropTypes from 'prop-types';
 
 const HomePage = () => (
   <div className="homeBody">
@@ -14,8 +13,5 @@ const HomePage = () => (
     </p>
   </div>
 );
-
-HomePage.propTypes = {
-};
 
 export default HomePage;

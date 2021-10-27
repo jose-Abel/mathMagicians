@@ -1,6 +1,5 @@
 /* eslint-disable max-len */
 import React from 'react';
-// import PropTypes from 'prop-types';
 
 const QuotesPage = () => (
   <div className="quotesBody">
@@ -9,8 +8,5 @@ const QuotesPage = () => (
     </h2>
   </div>
 );
-
-QuotesPage.propTypes = {
-};
 
 export default QuotesPage;
