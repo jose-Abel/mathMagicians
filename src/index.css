@@ -6,4 +6,22 @@
 
 body {
   box-sizing: border-box;
+  background-color: #d1d5de;
+  height: 200px;
+  background-image: url("img/math.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 1rem;
+}
+
+.homeBody {
+  padding: 4rem;
+}
+
+.homeP {
+  margin-top: 2rem;
+}
+
+.quotesBody {
+  margin: 15rem;
 }
