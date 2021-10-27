@@ -4,7 +4,6 @@ import HomePage from '../pages/HomePage';
 import CalculatorPage from '../pages/CalculatorPage';
 import QuotesPage from '../pages/QuotesPage';
 import Header from '../components/Header';
-import './AppRouter.css';
 
 class App extends Component {
   constructor(props) {
@@ -15,7 +14,7 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div className="container">
+        <div>
           <Header />
           <Switch>
             <Route exact path="/">
