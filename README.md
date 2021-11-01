@@ -66,7 +66,7 @@ To run the "react-scripts start" script, type the following command:
 
 [Netlify Live Version](https://jose-abel-math-magicians.netlify.app/)
 
-[Heroku Live Version](https://jose-abel-math-magicians.netlify.app/)
+[Heroku Live Version](https://jose-abel-math-magicians.herokuapp.com/)
 
 ### Tests
 
