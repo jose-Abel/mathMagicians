@@ -15,7 +15,7 @@ function diagonalDifference(arr) {
         }
         k--;
         if (k < 0) {
-            k = 2;
+            k = arr.length - 1;
         }
     }
     return Math.abs(firstSum - secondSum);
